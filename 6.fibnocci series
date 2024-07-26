@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+// Function to calculate the nth Fibonacci number using recursion
+int fibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Function to print the Fibonacci series and calculate the sum
+void printFibonacciSeriesAndSum(int n) {
+    int sum = 0;
+    printf("Fibonacci series:\n");
+    for (int i = 0; i < n; i++) {
+        int fib = fibonacci(i);
+        printf("%d ", fib);
+        sum += fib;
+    }
+    printf("\nSum of the series: %d\n", sum);
+}
+
+int main() {
+    int n = 10;
+    printFibonacciSeriesAndSum(n);
+    return 0;
+}
